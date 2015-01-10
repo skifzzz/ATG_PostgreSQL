@@ -44,8 +44,8 @@ create table dms_topic_sub (
 	subscriber_name	character varying(250)	null,
 	subscriber_id	numeric(19,0)	not null,
 	topic_id	numeric(19,0)	null,
-	durable	boolean	null,
-	active	boolean	null
+	durable	numeric(1,0)	null,
+	active	numeric(1,0)	null
 ,constraint dms_topic_sub_p primary key (subscriber_id));
 
 
@@ -61,7 +61,7 @@ create index dms_topic_read_idx on dms_topic_entry (read_state,delivery_date);
 
 create table dms_msg (
 	msg_class	character varying(250)	null,
-	has_properties	boolean	null,
+	has_properties	numeric(1,0)	null,
 	reference_count	numeric(10,0)	null,
 	msg_id	numeric(19,0)	not null,
 	timestamp	numeric(19,0)	null,
@@ -69,7 +69,7 @@ create table dms_msg (
 	reply_to	numeric(19,0)	null,
 	destination	numeric(19,0)	null,
 	delivery_mode	numeric(1,0)	null,
-	redelivered	boolean	null,
+	redelivered	numeric(1,0)	null,
 	type	character varying(250)	null,
 	expiration	numeric(19,0)	null,
 	priority	numeric(1,0)	null,

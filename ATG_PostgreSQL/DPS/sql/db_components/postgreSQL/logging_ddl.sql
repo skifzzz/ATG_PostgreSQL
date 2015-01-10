@@ -20,8 +20,7 @@ create table dps_user_event (
 	profileid	character varying(25)	null,
 	member	boolean	default FALSE not null
 ,constraint dps_user_event_p primary key (id)
-,constraint dps_usrvevnttyp_f foreign key (eventtype) references dps_event_type (id)
-,constraint dps_user_event_c check (member in (0,1)));
+,constraint dps_usrvevnttyp_f foreign key (eventtype) references dps_event_type (id));
 
 create index dps_user_event_ix on dps_user_event (eventtype);
 create index dps_ue_ts on dps_user_event (timestamp);
@@ -43,8 +42,7 @@ create table dps_request (
 	parentsessionid	character varying(100)	null,
 	name	character varying(255)	not null,
 	member	boolean	default FALSE not null
-,constraint dps_request_p primary key (id)
-,constraint dps_request_c check (member in (0,1)));
+,constraint dps_request_p primary key (id));
 
 create index dps_r_ts on dps_request (timestamp);
 
@@ -53,8 +51,7 @@ create table dps_reqname_sum (
 	member	boolean	default FALSE not null,
 	summarycount	integer	not null,
 	fromtime	date	not null,
-	totime	date	not null
-,constraint dps_reqname_sum_c check (member in (0,1)));
+	totime	date	not null);
 
 create index dps_rns_ft on dps_reqname_sum (fromtime,totime);
 
@@ -64,8 +61,7 @@ create table dps_session_sum (
 	member	boolean	default FALSE not null,
 	summarycount	integer	not null,
 	fromtime	date	not null,
-	totime	date	not null
-,constraint dps_session_sum_c check (member in (0,1)));
+	totime	date	not null);
 
 create index dps_rss_ft on dps_session_sum (fromtime,totime,sessionid);
 
@@ -83,8 +79,7 @@ create table dps_con_req_sum (
 	member	boolean	default FALSE not null,
 	summarycount	integer	not null,
 	fromtime	date	not null,
-	totime	date	not null
-,constraint dps_con_req_sum_c check (member in (0,1)));
+	totime	date	not null);
 
 create index dps_crs_ft on dps_con_req_sum (fromtime,totime);
 

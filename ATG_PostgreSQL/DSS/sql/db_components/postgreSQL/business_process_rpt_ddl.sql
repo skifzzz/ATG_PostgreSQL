@@ -10,8 +10,7 @@ create table drpt_stage_reached (
 	bp_name	character varying(255)	not null,
 	bp_stage	character varying(255)	null,
 	is_transient	boolean	not null,
-	bp_stage_sequence	numeric(10)	not null
-,constraint drpt_bpstage_c check (is_transient in (0,1)));
+	bp_stage_sequence	numeric(10)	not null);
 
 
 
