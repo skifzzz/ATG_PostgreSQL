@@ -64,7 +64,7 @@ create table dms_limbo_delay (
 	jms_deliverymode	numeric(10,0)	null,
 	jms_priority	numeric(10,0)	null,
 	jms_messageid	character varying(250)	null,
-	jms_redelivered	numeric(1,0)	null,
+	jms_redelivered	boolean	null,
 	jms_destination	bytea	null
 ,constraint limbo_delay_pk primary key (msg_id));
 

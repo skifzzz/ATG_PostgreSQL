@@ -19,12 +19,12 @@ create index dps_orgparent_org on dps_organization (parent_org);
 create table dps_user (
 	id	character varying(40)	not null,
 	login	character varying(40)	not null,
-	auto_login	numeric(1,0)	null,
+	auto_login	boolean	null,
 	password	character varying(70)	null,
 	password_salt	character varying(250)	null,
 	password_kdf	character varying(40)	null,
 	realm_id	character varying(40)	null,
-	member	numeric(1,0)	null,
+	member	boolean	null,
 	first_name	character varying(40)	null,
 	middle_name	character varying(40)	null,
 	last_name	character varying(40)	null,
@@ -32,7 +32,7 @@ create table dps_user (
 	locale	integer	null,
 	lastactivity_date	timestamp	null,
 	lastpwdupdate	timestamp	null,
-	generatedpwd	numeric(1)	null,
+	generatedpwd	boolean	null,
 	registration_date	timestamp	null,
 	email	character varying(255)	null,
 	email_status	integer	null,
@@ -116,9 +116,9 @@ create table dps_mailing (
 	num_soft_bounces	integer	null,
 	num_errors	integer	null,
 	num_skipped	numeric(10)	null,
-	fill_from_templ	numeric(1,0)	null,
-	is_batched	numeric(1)	null,
-	ignore_fatigue	numeric(1)	null,
+	fill_from_templ	boolean	null,
+	is_batched	boolean	null,
+	ignore_fatigue	boolean	null,
 	batch_size	numeric(10)	null
 ,constraint dps_mailing_p primary key (id));
 
@@ -143,7 +143,7 @@ create table dps_mail_batch (
 	num_bounces	numeric(10)	null,
 	num_errors	numeric(10)	null,
 	num_skipped	numeric(10)	null,
-	is_summarized	numeric(1)	null
+	is_summarized	boolean	null
 ,constraint dps_mail_batch_p primary key (mailing_id,start_idx)
 ,constraint dps_mailbatch_d_f foreign key (mailing_id) references dps_mailing (id));
 

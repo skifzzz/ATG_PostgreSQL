@@ -19,7 +19,7 @@ create table das_deployment (
 	file_marks_avail	numeric(10)	null,
 	thread_batch_size	numeric(10)	null,
 	failure_count	numeric(10)	null,
-	purge_deploy_data	numeric(1)	null
+	purge_deploy_data	boolean	null
 ,constraint daf_depl_pk primary key (deployment_id));
 
 create index das_dpl_start_idx on das_deployment (start_time);
@@ -42,7 +42,7 @@ create table das_thread_batch (
 	lower_bound	numeric(10)	null,
 	upper_bound	numeric(10)	null,
 	last_update_time	timestamp	null,
-	running	numeric(1,0)	not null
+	running	boolean	not null
 ,constraint das_dpl_tb_pk primary key (thread_batch_id));
 
 create index das_tb_deployment on das_thread_batch (deployment);

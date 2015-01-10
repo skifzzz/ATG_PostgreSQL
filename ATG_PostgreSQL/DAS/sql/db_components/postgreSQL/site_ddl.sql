@@ -17,7 +17,7 @@ create table site_configuration (
 	description	character varying(254)	null,
 	template	character varying(40)	null,
 	production_url	character varying(254)	null,
-	enabled	numeric(1)	not null,
+	enabled	boolean	not null,
 	site_down_url	character varying(254)	null,
 	open_date	date	null,
 	pre_opening_url	character varying(254)	null,

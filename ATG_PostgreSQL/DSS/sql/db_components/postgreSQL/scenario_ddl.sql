@@ -37,7 +37,7 @@ create index dss_scn_st_idx on dss_scenario_strs (id);
 create table dss_scenario_bools (
 	id	character varying(25)	not null,
 	tag	character varying(25)	not null,
-	context_bool	numeric(1,0)	null
+	context_bool	boolean	null
 ,constraint dss_scenario_boo_p primary key (id,tag)
 ,constraint dss_scenrblsid_f foreign key (id) references dss_ind_scenario (id));
 
