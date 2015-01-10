@@ -1,0 +1,9 @@
+This projects require jars from ATGDBSetup, CIM, DAS, DPS, DSS, ContentMgmt modules.
+
+Tested only on PostgreSQL 9.3 and ATG 11.1. 
+
+This project is result of reverse engineering and may corrupt your data. Author is not responsible for this.
+
+You may use this project as is, without any limitations.
+
+Author: Ruslan Karpov aka skif (skif_work@mail.ru)  

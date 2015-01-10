@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+ATG-Class-Path: lib/AwesomeCIM.jar lib/ant.jar lib/ant-nodeps.jar lib/ant-launcher.jar lib/commons-beanutils-1.7.0.jar lib/commons-digester-1.8.jar lib/hsqldb-1.8.0.7.jar lib/classes.jar lib/commons-io-2.4.jar
+ATG-Required: DAS DAS-UI ATGDBSetup
+ATG-Config-Path: config;localconfig
