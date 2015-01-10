@@ -42,9 +42,7 @@ create table dps_user (
 	date_of_birth	date	null,
 	securityStatus	integer	null,
 	description	character varying(254)	null
-,constraint dps_user_p primary key (id)
-,constraint dps_user1_c check (auto_login in (0,1))
-,constraint dps_user2_c check (member in (0,1)));
+,constraint dps_user_p primary key (id);
 
 create unique index dps_user_u on dps_user (login,realm_id);
 create index dps_user_l on dps_user (lower(email));
